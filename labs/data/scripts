@@ -1,0 +1,101 @@
+
+
+Basic commands:
+ls, mv, rm, pwd, mkdir, rmdir, whoami, hostname, clear
+
+> ls -l
+> pwd
+> whoami
+> ls jobs*
+
+
+Doument to all commands:
+man 
+
+> man ls
+> man man
+
+
+File content:
+more, less, head, tail
+
+> more alice.txt
+> head -n 10 housing.csv
+> tail alice.txt
+
+Word count
+> wc  alice.txt
+> wc -l titanic.csv
+
+Splitting file
+> split -l 400 titanic.csv
+> wc -l x*
+
+
+
+Concatinating and printing files
+> cat x*
+> cat titanic.csv
+
+
+Cutting columns
+> cut -f 2 jobs.tsv
+> cut -f 4 -d "," housing.
+> cut -f 4,5,6 -d, titanic.csv
+
+
+Concatinating lines:
+paste -s  -d, os.txt
+paste  - -  < os.txt
+paste  -d ":", - - -  < os.txt
+paste os.txt os2.txt
+
+
+
+Writing to files > , reading <, appending >>
+> cut -f 2 jobs.tsv > cities.txt
+> cat > test.txt
+> cat >> test.txt
+
+Sorting and uniq, piping
+> sort cities.txt | more
+> sort cities.txt | uniq -c
+> sort cities.txt | uniq -c | sort -rn | head
+
+Translate
+> tr [a-z] [A-Z] < alice.txt
+> tr -d [:space:] < alice.txt
+
+
+Grep  - searching plain text for regualr expression 
+> grep Alice alice.txt 
+> grep -c Alice alice.txt
+> grep Alice alice.txt | wc -l 
+
+
+
+Example: word frequency count in alice
+> cat pg11.txt | tr  -s [:space:] "\n" 
+> cat alice.txt | tr  -s [:space:] "\n" | sort | uniq -c
+> cat alice.txt | tr  -s [:space:] "\n" | sort | uniq -c | sort -r | head -50
+
+
+Just for fun
+> echo "hello" | rev
+
+
+More advanced
+awk - pattern scanning programming language
+sed - stream editor
+
+http://www.theunixschool.com
+http://planspace.org/2013/05/21/command-line-data-manipulation/
+
+
+
+
+
+
+
+
+
